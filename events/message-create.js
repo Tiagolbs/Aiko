@@ -12,7 +12,7 @@ module.exports = {
 		}
 
 		const mentions = message.mentions.users;
-		if (mentions.has(client.user.id)) {
+		if (client.user && mentions.has(client.user.id)) {
 			const messageContent = message.content.replace(/<.*?>/g, '').trim();
 
 			message.channel.sendTyping();
