@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"start":"nodemon index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "Tiago Seben",
@@ -12,7 +12,8 @@
   "dependencies": {
     "@discordjs/voice": "^0.16.0",
     "discord.js": "^14.11.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "openai": "^3.3.0"
   },
   "devDependencies": {
     "eslint": "^8.44.0",

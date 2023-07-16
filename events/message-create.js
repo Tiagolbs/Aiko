@@ -1,4 +1,5 @@
 const { Events } = require('discord.js');
+const { messageGenerator } = require('../utils/message-generator.js');
 
 module.exports = {
 	name: Events.MessageCreate,
@@ -13,11 +14,10 @@ module.exports = {
 
 		const mentions = message.mentions.users;
 		if (client.user && mentions.has(client.user.id)) {
-			const messageContent = message.content.replace(/<.*?>/g, '').trim();
-
 			message.channel.sendTyping();
-
-			message.channel.send('teste');
+			const messageContent = message.content.replace(/<.*?>/g, '').trim();
+			const response = await messageGenerator(messageContent);
+			message.channel.send(response.content);
 		}
 	},
 };
